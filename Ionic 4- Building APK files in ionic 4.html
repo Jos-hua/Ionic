@@ -1,0 +1,212 @@
+<html><head>
+        <title>Ionic 4- Building APK files in ionic 4</title>
+        <style>
+            #title{
+                text-align: center;
+    
+            }
+            #code{
+                color:green;
+                font-family: "Courier New", Courier, monospace !important;
+            }
+            
+        
+        </style>  
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./layout8/styles.css">
+    </head> 
+        
+        <body><div id="container">
+                        <h1 id="title">Ionic 4- Building APK files in ionic 4</h1>
+                        <h5 id="title">-Cedar IT Pvt. Ltd.</h5>
+                        <p><br /><br /></p>
+                        <h3>References:</h3>
+                        <p><a href="https://ionicframework.com/docs/installation/android">https://ionicframework.com/docs/installation/android</a></p>
+                        <p><a href="https://ionicframework.com/docs/building/android">https://ionicframework.com/docs/building/android</a></p>
+                        <p><a href="https://ionicframework.com/docs/publishing/play-store">https://ionicframework.com/docs/publishing/play-store</a></p>
+                        <p><br /><br /></p>
+                        <h2>Before You Proceed:</h2>
+                        <p>Make sure that your ionic project is running:</p>
+                        <p>Go to your ionic project folder (like MyFirstApp) and run</p>
+                        <p id="code"><strong><em>ionic serve -all</em></strong></p>
+                        <p>It should launch the app your default browser.</p>
+                        <p>If you get errors, you need to fix that first.</p>
+                        <p>One common mistake is mentioned below when you copy or unzip a project</p>
+                        <p>Go to your project folder and :</p>
+                        <ol>
+                        <ol>
+                        <ol>
+                        <ol>
+                        <li>Check node_modules folder. It should not be empty.</li><br>
+                        <li>If you have copied the project from another computer then you may have to delete the node_modules folder and install node-modules as follows</li>
+                        <br>
+                        <ul>
+                        <li id="code">npm install node-modules</li>
+                        <li>This will recreate the node_modules folder</li>
+                        </ul>
+                        </ol>
+                        </ol>
+                        </ol>
+                        </ol>
+                        <p><br /><br /><br /></p>
+                        <p>This Doc is for Windows. For linux and Mac Refer to the links given above</p>
+                        <ol>
+                            <li><h3>Files you will need</h3></li>
+                        <ul id="list">
+                            <li>JDK 8</li>
+                            <li>Gradle</li>
+                            <li>Android SDK</li>
+                        </ul>
+                        <li><h3>Where to get it</h3></li>
+                        <ol>
+                            <li>JDK 8</li>
+                        <ul>
+                            <li><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></li>
+                            </li>
+                        </ul>
+                        <li>Gradle</li>
+                        <ul>
+                            <li>Gradle can be downloaded here: <a href="https://gradle.org/next-steps/?version=5.4.1&amp;format=bin">https://gradle.org/next-steps/?version=5.4.1&amp;format=bin</a></li>
+                        </ul>
+                            <li>Android SDK</li>
+                        <ul>
+                            <li>Here: <a href="https://developer.android.com/studio/">https://developer.android.com/studio/</a></li>
+                            <li>Or Direct Link <a href="https://dl.google.com/dl/android/studio/install/3.4.1.0/android-studio-ide-183.5522156-windows.exe">https://dl.google.com/dl/android/studio/install/3.4.1.0/android-studio-ide-183.5522156-windows.exe</a></li>
+                        </ul>
+                        </ol>
+                        <li><h3>Check the versions</h3></li>
+                        <ol type="a">
+                            <li>From the terminal or command prompt</li>
+                        <ol>
+                            <li id="code">java -version</li>
+                        <ul>
+                            <li>Must return <c id="code">java version "1.8.0_*** </c></li>
+                        </ul>
+                        <li>Gradle</li>
+                        <ul>
+                            <li>gradle -v</li>
+                            <li>Must return Gradle 5.4.*</li>
+                        </ul>
+                        </ol>
+                        </ol>
+                        </ol>
+                        <li>Errors</li>
+                        <ol type="A">
+                            <li>If Gradle version cannot be found then it may not have been installed or not correctly installed.</li><br>
+                        <ol>
+                            <li id="code">Create a new directory C:\Gradle with File Exp lorer.</li><br>
+                            <li>Open a second File Explorer window and go to the directory where the Gradle distribution was downloaded. Double-click the ZIP archive to expose the content. <c id="code">Drag the content folder gradle-5.4.1 to your newly created C:\Gradle folder.</c></li><br>
+                            <li>Alternatively you can unpack the Gradle distribution ZIP into C:\Gradle using an archive tool of your choice.</li>
+                        </ol><br>
+                            <li>Set up Environment Variable</li><br>
+                        <ol>
+                            <li>In File Explorer right-click on the This PC (or Computer) icon, then click Properties Advanced System Settings/Environmental Variables.</li><br>
+                            <li>Under System Variables select Path, then click Edit. Add an entry for C:\Gradle\gradle-5.4.1\bin. Click OK to save.</li>
+                        </ol>
+                        </ol>
+                        <li>Ionic Project Setup</li>
+                        <ol>
+                        <li>Prepare for android. To do it run the below command:</li>
+                        </ol>
+                        </ol>
+                        <p><strong id="code">npm install -g cordova</strong></p>
+                        <p>Then run the command below</p>
+                        <p><strong id="code">ionic cordova prepare android</strong></p>
+                        <p>Did you get Errors? Check below</p>
+                        <ol>
+                        <ol>
+                        <ol>
+                        <ol>
+                        <li>Check if your current folder is your project folder</li>
+                        <ol type="a"><br>
+                        <li>Run <c id="code">dir</c> command on Command prompt and you should see all ionic project files.If not change to the project directory</li><br>
+                        <li>Check <i>node_modules</i> folder. It should not be empty. If you have copied the project from another computer then you may have to delete the node_modules folder and install node-modules as follows</li>
+                        <ul>
+                        <li id="code">npm install node-modules</li>
+                        </ul>
+                        </ol>
+                        </ol>
+                        </ol>
+                        </ol>
+                        </ol>
+                        
+                        <p><strong>If you want to get a DEBUG build, run the command below</strong></p>
+                        
+                        <ol>
+                        <ol>
+                        <ol>
+                        <ol>
+                        <li>BUILD :<strong id="code"> ionic cordova build android</strong></li>
+                        <br><li>Errors??</li>
+                        <ul><br>
+                        <li>SDK Licence issue</li>
+                        <img src="/error-sdk license.jpg">
+                        </ul><br><br>
+                        <li>TO Add and accept Android platform 28 SDK:</li>
+                        <ol type="a"><br>
+                        <li>Open Android Studio</li>
+                        <img src="/android studio.jpg"><br>
+                        <br><li>Click on Configure, Select SDK Manager</li>
+                        <img src="/droid-setup1.jpg"><br><br>
+                        <li>Select API Level 28,( thats what error on ionic showed)</li><br>
+                        <li>Select OK or Apply</li>
+                        <img src="/droid-setup2.jpg"><br><br>
+                        <li>Accept Licence</li>
+                        <img src="/accept.jpg"><br><br>
+                        <li>Wait for Component installer to finish</li>
+                        <img src="/components.jpg">
+                        </ol><br><br>
+                        <li>Alternative way to list AVDa (i.e, emulators)</li>
+                        <ul>
+                            <li>C:\YOURPATHTOAPPDATA\AppData\Local\Android\sdk\tools\android.bat list avd</li>
+                        </ul><br>
+                        <ol>
+                            <li>It should return no avd in list</li><br>
+                            <li>YOU can now use the AndrodStudio to add or just skip this(Recommended) as Emulators are pretty slow .</li>
+                        <ul>
+                            <br><li>Emulators or about 1GB in size to download.</li>
+                            <li>If you still want it You can click on Android Studio - Configure -AVDManager and follow the steps</li>
+                            <img src="">
+                        </ul>
+                        </ol>
+                        </ol>
+                        </ol>
+                        </ol>
+                        </ol>
+                        
+                    <li>MAKE a Release Build</li>
+                        <ul>
+                            <li id="code">ionic cordova build android --prod --release</li>
+                        </ul>
+                        
+                        
+                    <p><h3>Publishing the app</h3></p>
+                        <ol>
+                            <li>Read <a href="https://ionicframework.com/docs/publishing/play-store">https://ionicframework.com/docs/publishing/play-store</a></li>
+                            <li>
+                            <h2><a href="https://ionicframework.com/docs/publishing/play-store#generating-a-release-build-of-an-app">Generating a release build of an app</a></h2>
+                            </li>
+                        <ul>
+                        <li id="code">ionic cordova build android --prod --release</li>
+                        <li>This will give you an .apk file . Usually named as <em>app-releaase-unsigned.apk</em></li>
+                        </ul>
+                        <li>
+                        <h2><a href="https://ionicframework.com/docs/publishing/play-store#signing-an-apk">Signing an APK</a></h2>
+                        </li>
+                        <ol type="a">
+                            <li id="code">keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000</li>
+                            <ul><br>
+                                <li>Once that command has been ran and its prompts have been answered a file called my-release-key.keystore will be created in the current directory.</li>
+                            
+                                <li>WARNING: Save this file and keep it somewhere safe. If it is lost the Google Play Store will not accept updates for this app!</li>
+                        </ul>
+                            <br><li id="code">jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore <strong><em>HelloWorld-release-unsigned.apk</em></strong> alias_name</li>
+                            <br><li>Finally, the zip align tool must be run to optimize the APK. The zipalign tool can be found in <i>/path/to/Android/sdk/build-tools/VERSION/zipalign.</i><br> For example, on macOS with Android Studio installed, zipalign is in <i>~/Library/Android/sdk/build-tools/VERSION/zipalign:</i></li>
+                        <ul>
+                            <li id="code">zipalign -v 4 HelloWorld-release-unsigned.apk HelloWorld.apk</li>
+                        </ul>
+                        </ol>
+                        </ol>
+                </div> 
+        </body>
+</html>>
